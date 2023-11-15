@@ -15,3 +15,5 @@ elif not stroke:
     print("Нет")
 else:
     print("Да")
+
+# Использовать встроенную функцию

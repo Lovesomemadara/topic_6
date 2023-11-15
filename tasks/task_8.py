@@ -11,8 +11,10 @@ match operation:
         print("Произведение магических числе равно:", num_1 * num_2)
     case "Исчезновение":
         if num_2 != 0:
-            print("Исчезнувшее число:", num_1,
-                  "\n", num_1 - num_1, "\n", num_2)
+            print(
+                "Исчезнувшее число: " + str(num_1),
+                num_1 - num_1, num_2, sep="\n"
+            )
         else:
             print("Ошибка: Второе число равно нулю!")
     case _:
