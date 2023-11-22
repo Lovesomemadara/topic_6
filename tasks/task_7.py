@@ -23,7 +23,7 @@ yeah_tuple: tuple = (num, fl_num, stroke)
 false_tuple: bool = all(yeah_tuple)
 
 match yeah_tuple:
-    case _ if false_tuple == True:
+    case _ if false_tuple:
         print("Да")
     case _:
         print("Нет")

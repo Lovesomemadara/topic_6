@@ -1,4 +1,4 @@
-ALPHABETS = {
+ALPHABETS: dict = {
     "en_vowels": "AEIOU",
     "en_consonants": "BCDFGHJKLMNPQRSTVWXYZ",
     "ru_vowels": "АЕЁИОУЫЭЮЯ",
@@ -14,24 +14,23 @@ print("Выберите алфавит: \n"
 alph: int = int(input("Введите номер алфавита: "))
 
 if alph not in (1, 2):
-    print("Упс! Выбран неверный режим. Попробуйте ещё раз ...")
+    print("Некорректный режим")
 else:
-    char: str = input("Введите букву: ")
     if alph == 1:
-        if (char not in ALPHABETS['en_vowels']
-                and char not in ALPHABETS['en_consonants']):
-            print("Упс! Неизвестная буква. Попробуйте другую!")
-        else:
-            if char in ALPHABETS['en_vowels']:
-                print(f"{char} - гласная буква!")
-            elif char in ALPHABETS['en_consonants']:
-                print(f"{char} -  согласная буква!")
+        vowels: str = ALPHABETS["en_vowels"]
+        consonants: str = ALPHABETS["en_consonants"]
+        hints: str = "Введите букву латинского алфавита: "
+
     elif alph == 2:
-        if (char not in ALPHABETS['ru_vowels']
-                and char not in ALPHABETS['ru_consonants']):
-            print("Упс! Неизвестная буква. Попробуйте другую!")
-        else:
-            if char in ALPHABETS['ru_vowels']:
-                print(f"{char} - гласная буква!")
-            elif char in ALPHABETS['ru_consonants']:
-                print(f"{char} -  согласная буква!")
+        vowels: str = ALPHABETS["ru_vowels"]
+        consonants: str = ALPHABETS["ru_consonants"]
+        hints: str = "Введите букву кириллицы: "
+
+    char: str = input(hints)
+
+    if char in vowels:
+        print(f"{char} - гласная буква!")
+    elif char in consonants:
+        print(f"{char} - согласная буква!")
+    else:
+        print("Упс! Неизвестная буква. Попробуйте другую!")

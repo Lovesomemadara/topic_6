@@ -15,8 +15,7 @@ else:
 # -----------------match-case------------------
 
 match year, month:
-    case _ if ((is_leap_year == True)
-               and ((until_august or after_august) == True)):
+    case _ if is_leap_year and (until_august or after_august):
         print("Да")
     case _:
         print("Нет")
