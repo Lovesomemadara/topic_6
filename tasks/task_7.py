@@ -7,13 +7,23 @@ stroke: str = input("Введите строку: ")
 else:
     print("Да")'''
 
-if not num:
+'''if all(num):
     print("Нет")
 elif not fl_num:
     print("Нет")
 elif not stroke:
     print("Нет")
 else:
-    print("Да")
+    print("Да")'''
 
 # Использовать встроенную функцию
+
+# -----------------match-case------------------
+yeah_tuple: tuple = (num, fl_num, stroke)
+false_tuple: bool = all(yeah_tuple)
+
+match yeah_tuple:
+    case _ if false_tuple == True:
+        print("Да")
+    case _:
+        print("Нет")
